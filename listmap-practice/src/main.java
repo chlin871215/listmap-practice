@@ -57,7 +57,10 @@ public class main {
             animalMap.put(h1,animal);//將含有動物之List加入對應的Map
         }
         System.out.println("第一題：");
-        System.out.println(animalMap);//第一題
+        animalMap.keySet()
+                .forEach(m -> {
+                    System.out.println(m + ": " + String.join(" , ", animalMap.get(m)));
+                });
 //---------------------------------------------------------------------------
         Map <String, String> capitalMap = new HashMap<>();
         capitalMap.put("USA","Washington");
