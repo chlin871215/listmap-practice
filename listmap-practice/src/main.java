@@ -38,23 +38,23 @@ public class main {
         animalList.add(map7);
         //System.out.println(animalList);
 
-        List<String> habitat=new ArrayList<>();
+List<String> habitats=new ArrayList<>();
         for (Map<String,String> map:animalList){
-            habitat.add(map.get("habitat"));
+            habitats.add(map.get("habitat"));
         }
-        List<String> allHabitat=habitat.stream()
+        List<String> allHabitat=habitats.stream()
                 .distinct()
                 .collect(Collectors.toList());
         //System.out.println(allHabitat); //all habitats name
 
-        for (String h1:allHabitat){//輪流過濾每種habitat
+        for (String habitat:allHabitat){//輪流過濾每種habitat
             List<String> animal =new ArrayList<>();//初始化List
             for (Map<String,String> m:animalList){
-                if (h1.equals(m.get("habitat"))){
+                if (habitat.equals(m.get("habitat"))){
                     animal.add(m.get("name"));//符合要求的動物加入List
                 }
             }
-            animalMap.put(h1,animal);//將含有動物之List加入對應的Map
+            animalMap.put(habitat,animal);//將含有動物之List加入對應的Map
         }
         System.out.println("第一題：");
         animalMap.keySet()
